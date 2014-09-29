@@ -4,7 +4,7 @@ Perl-Scripts
 SummariseBlast.pl
 -----------------
 
-Usage: perl SummariseBlast.pl <inputfile> [options]
+Usage: perl SummariseBlast.pl inputfile [options]
 
 This Perl script takes input from a pairwise BLAST search result. It prints some summary information from the alignments, so that the user can get a quick overview of the quality and length of the alignment.
 It is designed to be used on a BLAST search against a database of genes, transcripts, or proteins; not on whole genomes. For example, it could be used to accompany a homology search, in order to see how well genes from a transcript assembly match with mRNA from a related organism, or in functional annotation to see the matches for a set of unannotated proteins. 
