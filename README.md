@@ -12,17 +12,16 @@ It takes into account multiple HSPs per hit, if present, and whether they overla
 
 Options:
 
---outformat=first   (default and quickest) Prints only the first hit's result. 
+           --outformat =first   (default and quickest) Prints only the first hit's result. 
 
-           =all     Prints all BLAST alignment results.
+                       =all     Prints all BLAST alignment results.
 
-           =best    Prints only the 'best' hit's result. (see further down for explanation).
+                       =best    Prints only the 'best' hit's result. (see further down for explanation).
 
---outfile=<outputfile>  (By default, output is written to a file named "AlignmentOutput.txt", but an alternative can be specified). 
+           --outfile= <outputfile>  (By default, output is written to a file named "AlignmentOutput.txt", but an alternative can be                       specified). 
+           -help prints usage and options
 
--help prints usage and options
-
--man prints full manual
+           -man prints full manual
 
 The output is the following summary information:
 
