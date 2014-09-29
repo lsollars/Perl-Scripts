@@ -9,6 +9,7 @@ Usage: perl SummariseBlast.pl inputfile [options]
 This Perl script takes input from a pairwise BLAST search result. It prints some summary information from the alignments, so that the user can get a quick overview of the quality and length of the alignment.
 It is designed to be used on a BLAST search against a database of genes, transcripts, or proteins; not on whole genomes. For example, it could be used to accompany a homology search, in order to see how well genes from a transcript assembly match with mRNA from a related organism, or in functional annotation to see the matches for a set of unannotated proteins. 
 It takes into account multiple HSPs per hit, if present, and whether they overlap in either the query or hit sequence. 
+The Bio::SearchIO module from BioPerl is used in this script (http://www.bioperl.org/wiki/Module:Bio::SearchIO), so please ensure you have BioPerl modules installed and accessible before using the script.
 
 Options:
 
