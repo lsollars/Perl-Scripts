@@ -18,7 +18,9 @@ Options:
 
                        =best    Prints only the 'best' hit's result. (see further down for explanation).
 
-           --outfile= <outputfile>  (By default, output is written to a file named "AlignmentOutput.txt", but an alternative can be                       specified). 
+           --outfile= <outputfile>  (By default, output is written to a file named "AlignmentOutput.txt", 
+                      but an alternative can be specified). 
+           
            -help prints usage and options
 
            -man prints full manual
