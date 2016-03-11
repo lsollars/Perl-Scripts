@@ -9,7 +9,7 @@ use strict;
 ### Output: 1st column is group identifer, next two columns are gene identifiers, fourth column is the ks value for the two genes
 ### Requirements: clustalw2, Pal2Nal.pl (http://www.bork.embl.de/pal2nal/), PAML yn00 (http://abacus.gene.ucl.ac.uk/software/paml.html)
 ### NOTE: You will probably need to change the path to these programs in the 'system' commands on lines 78, 81, 89 and 129. 
-### Some of the ks values in groups with more than two genes will be redundant (see Maere et al 2005), and should be corrected; a group with n genes should have n-1 duplications events, not n! events.
+### Some of the ks values in groups with more than two genes will be redundant (see Maere et al 2005), and should be corrected. Use the next script, reduce_redundant.py for this task. 
 
 open(GROUPFILE, $ARGV[0]) or die "Can't open group file";
 open(SEQFILE, $ARGV[1]) or die "Can't open seq file";
