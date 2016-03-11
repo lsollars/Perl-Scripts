@@ -1,6 +1,20 @@
 Perl-Scripts
 ============
 
+Ks Pipeline
+------------
+
+These are a few scripts which together, form a pipeline for investigating historic Whole Genome Duplications (WGD) in a genome. They group genes with similar sequences into paralog groups, and calculate the synonymous substitutions (KS) between genes within each group.  The assumption behind the KS method is that these paralogs arose through duplications; either local or genome-wide. A higher KS value (more synonymous substitutions), suggests that the duplication event that created the two copies occurred longer ago and the two seqeunces have had more time to diverge. By calculating and plotting all KS scores, one should observe a peak in values where a WGD is likely to have occured, as many paralogs point to roughly the same KS value. The absence of a peak suggests that no WGD has occurred (or that it occured so long ago that the KS method cannot detect it), and the current paralogs arose through local duplications. The scripts work like this:
+
+1). SummariseBlast.pl takes a pairwise BLAST result (i.e. an all-against-all BLAST of CDS or protein sequences from one genome) and prints some summary statistics such as alignment length.
+2). FilterBlast.pl takes the summary statistics and filters them to remove: A) the hit where the genes matches itself and B) hits that are below a certain length threshold (default is 50% of the longest gene, but this can be changed).
+3). get_groups.pl takes the filtered summary information and creates groups of genes that would be considered paralogs.
+4). get_ks.pl calculates KS values between every pairwise combination of genes within each paralog group. To do this it calls the following programs: clustal, Pal2Nal.pl (http://www.bork.embl.de/pal2nal/), and PAML yn00 (http://abacus.gene.ucl.ac.uk/software/paml.html). 
+5). reduce_redundant.py is a script written by my colleague Endymion Cooper at QMUL. It takes the complete set of KS values belonging to each paralog group and corrects them for redundant values. This step is important for the following reason: A group of n genes should only have n-1 single duplication events between them. Whereas by computing the KS values between all pairwise combinations of genes, we in fact obtain n(n-1)/2 values (Maere et al (2005) 10.1073/pnas.0501102102). This script corrects for these redundant values using a similar method as in Maere et al (2005). 
+6). The Ks values can then be plotted as a histogram, e.g. in R. 
+
+More information on each script is contained within the scripts themselves, so please have a read. As SummariseBlast.pl has a few options, they are explained below in more detail. 
+
 SummariseBlast.pl
 -----------------
 
