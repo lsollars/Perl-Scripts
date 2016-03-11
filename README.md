@@ -8,7 +8,7 @@ These are a few scripts which together, form a pipeline for investigating histor
 
 1). SummariseBlast.pl takes a pairwise BLAST result (i.e. an all-against-all BLAST of CDS or protein sequences from one genome) and prints some summary statistics such as alignment length.
 
-2). FilterBlast.pl takes the summary statistics and filters them to remove: A) the hit where the genes matches itself and B) hits that are below a certain length threshold (default is 50% of the longest gene, but this can be changed
+2). filterblast.pl takes the summary statistics and filters them to remove: A) the hit where the genes matches itself and B) hits that are below a certain length threshold (default is 50% of the longest gene, but this can be changed
 
 3). get_groups.pl takes the filtered summary information and creates groups of genes that would be considered paralogs.
 
